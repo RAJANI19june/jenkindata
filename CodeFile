@@ -1,0 +1,39 @@
+package Selenium_Package1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class MovetoElement {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.gecko.driver", "/home/quastech/Desktop/geckodriver");
+
+		WebDriver driver =new FirefoxDriver();
+		
+		
+		
+		driver.get("https://www.ebay.com/");
+
+		WebElement we=driver.findElement(By.linkText("Electronics"));
+		
+		Actions a=new Actions(driver);
+		a.moveToElement(we).perform();
+		
+	WebElement link=driver.findElement(By.linkText("Smart watches"));
+
+	if(link.isEnabled())
+	{
+		link.click();
+	}
+	
+		
+
+		
+		
+		
+	}
+
+}
